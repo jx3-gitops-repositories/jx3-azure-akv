@@ -18,18 +18,12 @@ jxRequirements:
     enabled: false
     schedule: ""
   cluster:
-    devEnvApprovers:
-    - todo
-    environmentGitOwner: todo
     gitKind: github
     gitName: github
     gitServer: https://github.com
-    provider: gke
-    registry: gcr.io
+    provider: aks
   environments:
   - key: dev
-  - key: staging
-  - key: production
   ingress:
     domain: ""
     externalDNS: false
@@ -39,7 +33,7 @@ jxRequirements:
       enabled: false
       production: false
   repository: nexus
-  secretStorage: gsm
+  secretStorage: vault
   vault: {}
   webhook: lighthouse
 jxRequirementsIngressExternalDNS:
@@ -47,4 +41,4 @@ jxRequirementsIngressExternalDNS:
 jxRequirementsIngressTLS:
   enabled: false
 jxRequirementsVault:
-  enabled: false
+  enabled: true
